@@ -119,3 +119,103 @@ body {
 .griditem:nth-of-type(9):hover {
     filter: brightness(94%);
 }
+
+.textinput:nth-of-type(1) {
+    appearance: none;
+    position: relative;
+    top: 50px;
+    border: 1px solid gray;
+}
+
+form > label:nth-of-type(1) {
+    appearance: none;
+    position: relative;
+    top: 30px;
+}
+
+.textinput:nth-of-type(2) {
+    appearance: none;
+    position: relative;
+    top: 9px;
+    left: 370px;
+    border: 1px solid gray;
+}
+
+form > label:nth-of-type(2) {
+    appearance: none;
+    position: relative;
+    top: -10px;
+    left: 286px;
+}
+
+#username1button {
+    appearance: none;
+    border: 1px solid gray;
+    position: relative;
+    top: 62px;
+}
+
+#username2button {
+    appearance: none;
+    border: 1px solid gray;
+    position: relative;
+    top: 20px;
+    left: 370px;
+}
+
+button:hover {
+    background-color: rgb(194, 194, 194);
+    cursor: pointer;
+}
+
+.player1stats {
+    border: 2px black solid;
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    top: 175px;
+    left: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.player1name,
+.player1points,
+.player1wins {
+    display: flex;
+    padding-left: 10px;
+    border: 2px black solid;
+    font-size: 15px;
+    align-items: center;
+    width: 100px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.player2stats {
+    border: 2px black solid;
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    top: 500px;
+    left: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.player2name,
+.player2points,
+.player2wins {
+    display: flex;
+    padding-left: 10px;
+    border: 2px black solid;
+    font-size: 15px;
+    align-items: center;
+    width: 100px;
+    height: 50px;
+    margin-bottom: 10px;
+}
