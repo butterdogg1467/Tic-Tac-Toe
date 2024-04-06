@@ -36,21 +36,22 @@ let gridItem1 = document.querySelector('#griditem1')
     let gridItem8Clicked = false;
     let gridItem9Clicked = false;
     
-    gridItem1.addEventListener('click', function() {
-        gridItem1Clicked = true
-        alert(gridItem1Clicked)
-    })
 
     let username1 = document.querySelector('#username1')
     let username2 = document.querySelector('#username2')
     let usernamebutton1 = document.querySelector('#username1button')
     let usernamebutton2 = document.querySelector('#username2button')
 
+    let usernamebutton1Clicked = false
+    let usernamebutton2Clicked = false
+
     usernamebutton1.addEventListener('click', function() {
+        usernamebutton1Clicked = true
         createPlayer(username1.value)
     })
 
     usernamebutton2.addEventListener('click', function() {
+        usernamebutton2Clicked = true
         createPlayer(username2.value)
     })
 
@@ -62,6 +63,18 @@ let gridItem1 = document.querySelector('#griditem1')
     let player2StatPoints = document.querySelector('.player2points')
     let player2StatWins = document.querySelector('.player2wins')
 
+    let startGameButton = document.querySelector('#startgame')
+
+    startGameButton.addEventListener('click', function() {
+        usernamebutton1.disabled = true
+        usernamebutton2.disabled = true
+        username1.disabled = true
+        username2.disabled = true
+        game()
+    })
+
+    let playerOneCreated = false
+    let playerTwoCreated = false
 
 function createPlayer(name) {
     let player = {
@@ -69,14 +82,21 @@ function createPlayer(name) {
         points: 0,
         wins: 0,
         ties: 0,
+        playerSelections: []
     }
 
-    if (player1StatName.textContent === '' && player1StatPoints.textContent === '' && player1StatWins.textContent === '') {
-        player1StatName.textContent = 'Name: ' + player.name
+    let playerSelections = player.playerSelections
+
+
+    if (usernamebutton1Clicked === true && playerOneCreated === false) {
+        player1StatName.textContent = 'Player One Name: ' + username1.value
         player1StatPoints.textContent = 'Points: ' + player.points
         player1StatWins.textContent = 'Wins: ' + player.wins
-    } else {
-        player2StatName.textContent = 'Name: ' + player.name
+        playerOneCreated = true
+    } 
+    
+    if (usernamebutton2Clicked === true && playerTwoCreated === false){
+        player2StatName.textContent = 'Player Two Name: ' + username2.value
         player2StatPoints.textContent = 'Points: ' + player.points
         player2StatWins.textContent = 'Wins: ' + player.wins
     }
@@ -88,7 +108,6 @@ function createPlayer(name) {
 
     let gameboardSpace = 9
 
-    let playerSelections = []
 
     function playerInput(input){
 
@@ -125,6 +144,12 @@ function createPlayer(name) {
         }
     }
     
+    createPlayer.prototype.getPlayer = function() {
+        return {
+            player: player
+        }
+    };
+    
 
     return {
         addPoints,  
@@ -132,7 +157,12 @@ function createPlayer(name) {
         name,
         player,
         playerSelections,
+        getPlayer: createPlayer.prototype.getPlayer
     }
+
+}
+
+function game() {
 
 }
 
