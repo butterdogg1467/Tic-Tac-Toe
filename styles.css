@@ -8,7 +8,6 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(10, 0.5fr);
-    overflow: hidden;
 }
 
 .gameboard {
@@ -17,8 +16,8 @@ body {
     grid-column: 2/3;
     grid-row: 2/5;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr ;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     padding: 0px;
 }
 
@@ -121,67 +120,73 @@ body {
 
 .textinput:nth-of-type(1) {
     appearance: none;
-    position: relative;
-    top: 50px;
     border: 1px solid gray;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px 0px;
+    width: 99%;
 }
 
 form > label:nth-of-type(1) {
     appearance: none;
-    position: relative;
-    top: 30px;
-}
-
-.textinput:nth-of-type(2) {
-    appearance: none;
-    position: relative;
-    top: 9px;
-    left: 370px;
-    border: 1px solid gray;
 }
 
 form > label:nth-of-type(2) {
     appearance: none;
-    position: relative;
-    top: -10px;
-    left: 286px;
 }
 
 #username1button {
     appearance: none;
     border: 1px solid gray;
-    position: relative;
-    top: 62px;
+    padding: 10px 20px;
+    width: 100%;
 }
 
 #username2button {
     appearance: none;
     border: 1px solid gray;
-    position: relative;
-    top: 20px;
-    left: 370px;
+    padding: 10px 20px;
+    width: 100%;
 }
 
 #startgame {
     appearance: none;
     border: 1px solid gray;
-    position: relative;
-    top: 100px;
-    left: 150px;
+    grid-column: 2/3;
+    grid-row: 4/5;
+}
+
+.player1formelements {
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+.player2formelements {
+    grid-column: 3/4;
+    grid-row: 2/3;
+}
+
+form {
+    grid-column: 1/4;
+    grid-row: 4/6;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(4, 1fr);
 }
 
 button:hover {
     background-color: rgb(194, 194, 194);
     cursor: pointer;
+    filter: brightness(94%);
 }
 
 .player1stats {
     border: 2px black solid;
     width: 300px;
     height: 300px;
-    position: absolute;
-    top: 175px;
-    left: 100px;
+    grid-column: 1/2;
+    grid-row: 2/3;
+    justify-self: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -205,10 +210,10 @@ button:hover {
     border: 2px black solid;
     width: 300px;
     height: 300px;
-    position: absolute;
-    top: 500px;
-    left: 100px;
+    grid-column: 3/4;
+    grid-row: 2/3;
     display: flex;
+    justify-self: center;
     flex-direction: column;
     justify-content: center;
     align-items: center;

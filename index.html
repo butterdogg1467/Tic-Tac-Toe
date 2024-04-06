@@ -8,6 +8,8 @@
     <script src="script.js"></script>
 </head>
 <body>
+Wrapped
+    <div class="gamestatus"></div>
 
     <div class="player1stats">
         <div class="playernum1">Player One</div>
@@ -34,12 +36,16 @@
         <div class="griditem" id="griditem8"></div>
         <div class="griditem" id="griditem9"></div>
         <form>
-            <label for="username1">Player 1</label>
-            <input type="text" name="username1" id="username1" class="textinput">
-            <button class="button" id="username1button" type="button">Save Name</button>
-            <label for="username2">Player 2</label>
-            <input type="text" name="username2" id="username2" class="textinput">
-            <button class="button" id="username2button" type="button">Save Name</button>
+            <div class="player1formelements">
+                <label for="username1">Player 1</label>
+                <input type="text" name="username1" id="username1" class="textinput" required>
+                <button class="button" id="username1button" type="button">Save Name</button>
+            </div>
+            <div class="player2formelements">
+                <label for="username2">Player 2</label>
+                <input type="text" name="username2" id="username2" class="textinput" required>
+                <button class="button" id="username2button" type="button">Save Name</button>
+            </div>
             <button class="button" id="startgame" type="button">Start Game</button>
         </form>
     </div>

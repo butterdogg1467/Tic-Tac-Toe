@@ -70,11 +70,42 @@ let gridItem1 = document.querySelector('#griditem1')
         usernamebutton2.disabled = true
         username1.disabled = true
         username2.disabled = true
-        game()
+    })
+
+    if (username1.value === '') {
+        startGameButton.disabled = true
+        startGameButton.textContent = 'Please Enter a Name'
+    }
+    
+    username1.addEventListener('input', function(){
+        if (username1.value != '') {
+            startGameButton.disabled = false
+            startGameButton.textContent = 'Start Game'
+        } else if (username1.value === '') {
+            startGameButton.disabled = true
+            startGameButton.textContent = 'Please Enter a Name'
+        }
+    })
+
+    if (username2.value === '') {
+        startGameButton.disabled = true
+        startGameButton.textContent = 'Please Enter a Name'
+    }
+    
+    username2.addEventListener('input', function(){
+        if (username2.value != '') {
+            startGameButton.disabled = false
+            startGameButton.textContent = 'Start Game'
+        } else if (username2.value === '') {
+            startGameButton.disabled = true
+            startGameButton.textContent = 'Please Enter a Name'
+        }
     })
 
     let playerOneCreated = false
     let playerTwoCreated = false
+
+    let gameStatus = document.querySelector('.gamestatus')
 
 function createPlayer(name) {
     let player = {
@@ -108,16 +139,8 @@ function createPlayer(name) {
 
     let gameboardSpace = 9
 
-
     function playerInput(input){
 
-        if (typeof input === 'number'){
-            let inputStr = input.toString()
-            if (inputStr.length === 1) {
-            gameboardSpace = gameboardSpace - 1
-            playerSelections.push(input)
-            } 
-        }
         if (playerSelections.length >= 3) {
             let playerSelectionsJoined = []
             for(let i = 0; i < playerSelections.length; i += 3) {
@@ -131,24 +154,77 @@ function createPlayer(name) {
 
         if (gameboardSpace <= 1 && player.wins === 0) {
             player.ties++
-            console.log('tied')
+            gameStatus.textContent = 'Game Tied!'
         }
     }
 
 
     function addPoints() {
         player.points++
+        gameboardSpace = 9
         if (player.points >= 3) {
             player.wins++
             player.points = 0
         }
     }
-    
-    createPlayer.prototype.getPlayer = function() {
-        return {
-            player: player
-        }
-    };
+
+    function game(input) {
+            playerSelections.push(input)
+            playerInput()
+            gameboardSpace = gameboardSpace - 1
+            alert(gameboardSpace)
+            player1StatPoints.textContent = 'Points: ' + player.points
+            player1StatWins.textContent = 'Wins: ' + player.wins
+
+            if (player.wins === 3){
+                gameStatus.textContent = 'Player 1 Wins!'
+            }
+    }
+
+    gridItem1.addEventListener('click', function(){
+        game(0)
+
+    })
+
+    gridItem2.addEventListener('click', function(){
+        game(1)
+
+    })
+
+    gridItem3.addEventListener('click', function(){
+        game(2)
+
+    })
+
+    gridItem4.addEventListener('click', function(){
+        game(0)
+
+    })
+
+    gridItem5.addEventListener('click', function(){
+        game(1)
+
+    })
+
+    gridItem6.addEventListener('click', function(){
+        game(2)
+
+    })
+
+    gridItem7.addEventListener('click', function(){
+        game(0)
+
+    })
+
+    gridItem8.addEventListener('click', function(){
+        game(1)
+
+    })
+
+    gridItem9.addEventListener('click', function(){
+        game(2)
+
+    })
     
 
     return {
@@ -157,15 +233,10 @@ function createPlayer(name) {
         name,
         player,
         playerSelections,
-        getPlayer: createPlayer.prototype.getPlayer
+        game
     }
 
 }
-
-function game() {
-
-}
-
 
 
 
