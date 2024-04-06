@@ -36,6 +36,20 @@ let gridItem1 = document.querySelector('#griditem1')
     let gridItem8Clicked = false;
     let gridItem9Clicked = false;
     
+    let gameForm = document.querySelector('.gameform')
+    let resetGameButton = document.querySelector('.resetbutton')
+    
+    resetGameButton.addEventListener('click', function () {
+        gridItem1.textContent = ' '
+        gridItem2.textContent = ' '
+        gridItem3.textContent = ' '
+        gridItem4.textContent = ' '
+        gridItem5.textContent = ' '
+        gridItem6.textContent = ' '
+        gridItem7.textContent = ' '
+        gridItem8.textContent = ' '
+        gridItem9.textContent = ' '
+    })
 
     let username1 = document.querySelector('#username1')
     let username2 = document.querySelector('#username2')
@@ -56,11 +70,9 @@ let gridItem1 = document.querySelector('#griditem1')
     })
 
     let player1StatName = document.querySelector('.player1name')
-    let player1StatPoints = document.querySelector('.player1points')
     let player1StatWins = document.querySelector('.player1wins')
 
     let player2StatName = document.querySelector('.player2name')
-    let player2StatPoints = document.querySelector('.player2points')
     let player2StatWins = document.querySelector('.player2wins')
 
     let startGameButton = document.querySelector('#startgame')
@@ -110,31 +122,35 @@ let gridItem1 = document.querySelector('#griditem1')
 function createPlayer(name) {
     let player = {
         name: name,
-        points: 0,
         wins: 0,
         ties: 0,
-        playerSelections: []
+        playerSelections: [],
+    }
+
+    let playerNumber;
+
+    if (playerOneCreated === false && playerTwoCreated === false) {
+        playerOneCreated = true
+        playerNumber = '1'
+        alert(playerNumber)
+    }
+
+    else if (playerTwoCreated === false && playerOneCreated === true) {
+        playerNumber = '2'
+        alert(playerNumber)
     }
 
     let playerSelections = player.playerSelections
 
 
-    if (usernamebutton1Clicked === true && playerOneCreated === false) {
+    if (usernamebutton1Clicked === true && playerOneCreated === true) {
         player1StatName.textContent = 'Player One Name: ' + username1.value
-        player1StatPoints.textContent = 'Points: ' + player.points
         player1StatWins.textContent = 'Wins: ' + player.wins
-        playerOneCreated = true
     } 
     
     if (usernamebutton2Clicked === true && playerTwoCreated === false){
         player2StatName.textContent = 'Player Two Name: ' + username2.value
-        player2StatPoints.textContent = 'Points: ' + player.points
         player2StatWins.textContent = 'Wins: ' + player.wins
-    }
-    
-    if (gridItem1Clicked === true) {
-        playerSelections.push('1')
-        alert(playerSelections)
     }
 
     let gameboardSpace = 9
@@ -160,69 +176,71 @@ function createPlayer(name) {
 
 
     function addPoints() {
-        player.points++
+        player.wins++
         gameboardSpace = 9
-        if (player.points >= 3) {
-            player.wins++
-            player.points = 0
-        }
     }
 
     function game(input) {
             playerSelections.push(input)
             playerInput()
             gameboardSpace = gameboardSpace - 1
-            alert(gameboardSpace)
-            player1StatPoints.textContent = 'Points: ' + player.points
             player1StatWins.textContent = 'Wins: ' + player.wins
 
-            if (player.wins === 3){
-                gameStatus.textContent = 'Player 1 Wins!'
+            if (player.wins >= 1){
+                gameStatus.textContent = `${player.name} Wins!`
             }
     }
 
     gridItem1.addEventListener('click', function(){
         game(0)
-
+        gridItem1.textContent = 'X'
     })
 
     gridItem2.addEventListener('click', function(){
         game(1)
-
+        gridItem2.textContent = 'X'
+        
     })
 
     gridItem3.addEventListener('click', function(){
         game(2)
+        gridItem3.textContent = 'X'
 
     })
 
     gridItem4.addEventListener('click', function(){
         game(0)
+        gridItem4.textContent = 'X'
 
     })
 
     gridItem5.addEventListener('click', function(){
         game(1)
+        gridItem5.textContent = 'X'
 
     })
 
     gridItem6.addEventListener('click', function(){
         game(2)
+        gridItem6.textContent = 'X'
 
     })
 
     gridItem7.addEventListener('click', function(){
         game(0)
+        gridItem7.textContent = 'X'
 
     })
 
     gridItem8.addEventListener('click', function(){
         game(1)
+        gridItem8.textContent = 'X'
 
     })
 
     gridItem9.addEventListener('click', function(){
         game(2)
+        gridItem9.textContent = 'X'
 
     })
     
@@ -233,7 +251,7 @@ function createPlayer(name) {
         name,
         player,
         playerSelections,
-        game
+        game,
     }
 
 }

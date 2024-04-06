@@ -25,60 +25,87 @@ body {
     background-color: white;
 }
 .griditem:nth-of-type(1) {
+    display: flex;
     grid-column: 1/2;
     grid-row: 1/2;
     border-right: black 2px solid;
     border-bottom: black 2px solid;
+    font-size: 100px;
+    justify-content: center;
 }
 
 .griditem:nth-of-type(2) {
+    display: flex;
     grid-column: 2/3;
     grid-row: 1/2;
     border-right: black 2px solid;
     border-bottom: black 2px solid;
+    font-size: 100px;
+    justify-content: center;
 }
 
 .griditem:nth-of-type(3) {
+    display: flex;
     grid-column: 3/4;
     grid-row: 1/2;
     border-bottom: black 2px solid;
+    font-size: 100px;
+    justify-content: center;
 }
 
 .griditem:nth-of-type(4) {
+    display: flex;
     grid-column: 1/2;
     grid-row: 2/3;
     border-right: black 2px solid;
     border-bottom: black 2px solid;
+    font-size: 100px;
+    justify-content: center;
 }
 
 .griditem:nth-of-type(5) {
+    display: flex;
     grid-column: 2/3;
     grid-row: 2/3;
     border-right: black 2px solid;
     border-bottom: black 2px solid;
+    font-size: 100px;
+    justify-content: center;
 }
 
 .griditem:nth-of-type(6) {
+    display: flex;
     grid-column: 3/4;
     grid-row: 2/3;
     border-bottom: black 2px solid;
+    font-size: 100px;
+    justify-content: center;
 }
 
 .griditem:nth-of-type(7) {
+    display: flex;
     grid-column: 1/2;
     grid-row: 3/4;
     border-right: black 2px solid;
+    font-size: 100px;
+    justify-content: center;
 }
 
 .griditem:nth-of-type(8) {
+    display: flex;
     grid-column: 2/3;
     grid-row: 3/4;
     border-right: black 2px solid;
+    font-size: 100px;
+    justify-content: center;
 }
 
 .griditem:nth-of-type(9) {
+    display: flex;
     grid-column: 3/4;
     grid-row: 3/4;
+    font-size: 100px;
+    justify-content: center;
 }
 
 
@@ -153,7 +180,14 @@ form > label:nth-of-type(2) {
     appearance: none;
     border: 1px solid gray;
     grid-column: 2/3;
-    grid-row: 4/5;
+    grid-row: 6/7;
+}
+
+.resetbutton {
+    appearance: none;
+    border: 1px solid gray;
+    grid-column: 2/3;
+    grid-row: 8/9;
 }
 
 .player1formelements {
@@ -171,7 +205,7 @@ form {
     grid-row: 4/6;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr) 40px 40px 40px 40px;
 }
 
 button:hover {
