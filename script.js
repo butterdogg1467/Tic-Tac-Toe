@@ -161,21 +161,14 @@ function createPlayer(name, playerNumber) {
             gameStatus.textContent = 'Game Tied!'
         }
     }
+    
+    gameStatus.textContent = playerTurn
 
 
     function addPoints() {
         player.wins++
         gameboardSpace = 9
     }
-
-    function playerTurnSwitch() {
-        if (playerTurn === 'playerOne') {
-            playerTurn = 'playerTwo'
-        } else if (playerTurn === 'playerTwo') {
-            playerTurn = 'playerOne'
-        }
-    }
-
 
     function game(input) {
             playerSelections.push(input)
@@ -188,155 +181,174 @@ function createPlayer(name, playerNumber) {
             }
     }
 
-    if (playerTurn === 'playerOne') {
+    function playerTurnSwitch() {
+            playerTurn = 'playerTwo'
+    }
+
+    function playerTurnSwitch2() {
+            playerTurn = 'playerOne'
+    }
+
     gridItem1.addEventListener('click', function(){
-    game(0)
-        gridItem1.textContent = 'X'
-        player.playerNumber = '2'
-        playerTurnSwitch()
-        alert(playerTurn)
-    })
+        if (playerTurn === 'playerOne') {
+            game(0)
+            gridItem1.textContent = 'X'
+            player.playerNumber = '2'
+            playerTurnSwitch2()
+            playerTurnSwitch()
+            gameStatus.textContent = playerTurn
+        } else if (playerTurn === 'playerTwo') {
+            game(0)
+            gridItem1.textContent = '0'
+            player.playerNumber = '1'
+            playerTurnSwitch()
+            playerTurnSwitch2()
+            gameStatus.textContent = playerTurn
+        }
+    })   
 
     gridItem2.addEventListener('click', function(){
-        game(1)
-        gridItem2.textContent = 'X'
-        player.playerNumber = '2'
-        playerTurnSwitch()      
-        alert(playerTurn)
-    })
+        if (playerTurn === 'playerOne') {
+            game(1)
+            gridItem2.textContent = 'X'
+            player.playerNumber = '2'
+            playerTurnSwitch2()
+            playerTurnSwitch()
+            gameStatus.textContent = playerTurn
+        } else if (playerTurn === 'playerTwo') {
+            game(1)
+            gridItem2.textContent = '0'
+            player.playerNumber = '1'
+            playerTurnSwitch()
+            playerTurnSwitch2()
+            gameStatus.textContent = playerTurn
+        }
+    })   
 
     gridItem3.addEventListener('click', function(){
-        game(2)
-        gridItem3.textContent = 'X'
-        player.playerNumber = '2'
-        playerTurnSwitch()
-        alert(playerTurn)
-    })
+        if (playerTurn === 'playerOne') {
+            game(2)
+            gridItem3.textContent = 'X'
+            player.playerNumber = '2'
+            playerTurnSwitch2()
+            playerTurnSwitch()
+            gameStatus.textContent = playerTurn
+        } else if (playerTurn === 'playerTwo') {
+            game(2)
+            gridItem3.textContent = '0'
+            player.playerNumber = '1'
+            playerTurnSwitch()
+            playerTurnSwitch2()
+            gameStatus.textContent = playerTurn
+        }
+    })  
 
     gridItem4.addEventListener('click', function(){
-        game(0)
-        gridItem4.textContent = 'X'
-        player.playerNumber = '2'
-        playerTurnSwitch()
-        alert(playerTurn)
-    })
+        if (playerTurn === 'playerOne') {
+            game(0)
+            gridItem4.textContent = 'X'
+            player.playerNumber = '2'
+            playerTurnSwitch2()
+            playerTurnSwitch()
+            gameStatus.textContent = playerTurn
+        } else if (playerTurn === 'playerTwo') {
+            game(0)
+            gridItem4.textContent = '0'
+            player.playerNumber = '1'
+            playerTurnSwitch()
+            playerTurnSwitch2()
+            gameStatus.textContent = playerTurn
+        }
+    })   
 
-gridItem5.addEventListener('click', function(){
-        game(1)
-        gridItem5.textContent = 'X'
-        player.playerNumber = '2'
-        playerTurnSwitch()
-        alert(playerTurn)
-    })
+    gridItem5.addEventListener('click', function(){
+        if (playerTurn === 'playerOne') {
+            game(1)
+            gridItem5.textContent = 'X'
+            player.playerNumber = '2'
+            playerTurnSwitch2()
+            playerTurnSwitch()
+            gameStatus.textContent = playerTurn
+        } else if (playerTurn === 'playerTwo') {
+            game(1)
+            gridItem5.textContent = '0'
+            player.playerNumber = '1'
+            playerTurnSwitch()
+            playerTurnSwitch2()
+            gameStatus.textContent = playerTurn
+        }
+    })   
 
-gridItem6.addEventListener('click', function(){
-        game(2)
-        gridItem6.textContent = 'X'
-        player.playerNumber = '2'
-        playerTurnSwitch()
-        alert(playerTurn)
-    })
+    gridItem6.addEventListener('click', function(){
+        if (playerTurn === 'playerOne') {
+            game(2)
+            gridItem6.textContent = 'X'
+            player.playerNumber = '2'
+            playerTurnSwitch2()
+            playerTurnSwitch()
+            gameStatus.textContent = playerTurn
+        } else if (playerTurn === 'playerTwo') {
+            game(2)
+            gridItem6.textContent = '0'
+            player.playerNumber = '1'
+            playerTurnSwitch()
+            playerTurnSwitch2()
+            gameStatus.textContent = playerTurn
+        }
+    })  
+    gridItem7.addEventListener('click', function(){
+        if (playerTurn === 'playerOne') {
+            game(0)
+            gridItem7.textContent = 'X'
+            player.playerNumber = '2'
+            playerTurnSwitch2()
+            playerTurnSwitch()
+            gameStatus.textContent = playerTurn
+        } else if (playerTurn === 'playerTwo') {
+            game(0)
+            gridItem7.textContent = '0'
+            player.playerNumber = '1'
+            playerTurnSwitch()
+            playerTurnSwitch2()
+            gameStatus.textContent = playerTurn
+        }
+    })   
 
-gridItem7.addEventListener('click', function(){
-        game(0)
-        gridItem7.textContent = 'X'
-        player.playerNumber = '2'
-        playerTurnSwitch()
-        alert(playerTurn)
-    })
+    gridItem8.addEventListener('click', function(){
+        if (playerTurn === 'playerOne') {
+            game(1)
+            gridItem8.textContent = 'X'
+            player.playerNumber = '2'
+            playerTurnSwitch2()
+            playerTurnSwitch()
+            gameStatus.textContent = playerTurn
+        } else if (playerTurn === 'playerTwo') {
+            game(1)
+            gridItem8.textContent = '0'
+            player.playerNumber = '1'
+            playerTurnSwitch()
+            playerTurnSwitch2()
+            gameStatus.textContent = playerTurn
+        }
+    })   
 
-gridItem8.addEventListener('click', function(){
-        game(1)
-        gridItem8.textContent = 'X'
-        player.playerNumber = '2'
-        playerTurnSwitch()
-        alert(playerTurn)
-    })
-
-gridItem9.addEventListener('click', function(){
-        game(2)
-        gridItem9.textContent = 'X'
-        player.playerNumber = '2'
-        playerTurnSwitch()
-        alert(playerTurn)
-    })
-
-} 
-
-
-else if (playerTurn === 'playerTwo') {
-    gridItem1.addEventListener('click', function(){
-        game(0)
-        gridItem1.textContent = 'O'
-        player.playerNumber = '1'
-        playerTurnSwitch()
-        alert(playerTurn)
-    })
-
-    gridItem2.addEventListener('click', function(){
-        game(1)
-        gridItem2.textContent = 'O'
-        player.playerNumber = '1'
-        playerTurnSwitch()
-        alert(playerTurn)
-    })
-
-    gridItem3.addEventListener('click', function(){
-        game(2)
-        gridItem3.textContent = 'O'
-        player.playerNumber = '1'
-        playerTurnSwitch()
-        alert(playerTurn)
-    })
-
-    gridItem4.addEventListener('click', function(){
-        game(0)
-        gridItem4.textContent = 'O'
-        player.playerNumber = '1'
-        playerTurnSwitch()
-    })
-
-gridItem5.addEventListener('click', function(){
-        game(1)
-        gridItem5.textContent = 'O'
-        player.playerNumber = '1'
-        playerTurnSwitch()
-        alert(playerTurn)
-    })
-
-gridItem6.addEventListener('click', function(){
-        game(2)
-        gridItem6.textContent = 'O'
-        player.playerNumber = '1'
-        playerTurnSwitch()
-        alert(playerTurn)
-    })
-
-gridItem7.addEventListener('click', function(){
-        game(0)
-        gridItem7.textContent = 'O'
-        player.playerNumber = '1'
-        playerTurnSwitch()
-        alert(playerTurn)
-    })
-
-gridItem8.addEventListener('click', function(){
-        game(1)
-        gridItem8.textContent = 'O'
-        player.playerNumber = '1'
-        playerTurnSwitch()
-        alert(playerTurn)
-    })
-
-gridItem9.addEventListener('click', function(){
-        game(2)
-        gridItem9.textContent = 'O'
-        player.playerNumber = '1'
-        playerTurnSwitch()
-        alert(playerTurn)
-    })
-}
-
+    gridItem9.addEventListener('click', function(){
+        if (playerTurn === 'playerOne') {
+            game(2)
+            gridItem9.textContent = 'X'
+            player.playerNumber = '2'
+            playerTurnSwitch2()
+            playerTurnSwitch()
+            gameStatus.textContent = playerTurn
+        } else if (playerTurn === 'playerTwo') {
+            game(2)
+            gridItem9.textContent = '0'
+            player.playerNumber = '1'
+            playerTurnSwitch()
+            playerTurnSwitch2()
+            gameStatus.textContent = playerTurn
+        }
+    })  
 
     return {
         addPoints,  
