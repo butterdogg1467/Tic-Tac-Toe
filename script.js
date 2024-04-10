@@ -259,7 +259,6 @@ function createPlayer(name, playerNumber) {
                 gameStatus.textContent = `${player.name} Wins!`
             }
     }
-
     let gridItem1Clicked = false
     let gridItem2Clicked = false
     let gridItem3Clicked = false
@@ -271,7 +270,12 @@ function createPlayer(name, playerNumber) {
     let gridItem9Clicked = false
 
     gridItem1.addEventListener('click', function(){
-         if (gridItem1Clicked === false) {
+        if (gridItem1Clicked === true){
+            return
+        }
+        gridItem1Clicked = true
+
+         if (gridItem1.textContent !== 'X' || gridItem1.textContent !== '0') {
             if (playerTurn === 'playerOne') {
                 game(0)
                 gridItem1.textContent = 'X'
@@ -283,15 +287,17 @@ function createPlayer(name, playerNumber) {
                 player.playerNumber = '1'
                 gameStatus.textContent = playerTurn
             }
-        } else {
-            
-        }
-        
-    })   
+        } 
+    })
     
     
 
     gridItem2.addEventListener('click', function(){
+        if (gridItem2Clicked === true){
+            return
+        }
+        gridItem2Clicked = true
+
         if (playerTurn === 'playerOne') {
             game(1)
             gridItem2.textContent = 'X'
@@ -306,6 +312,11 @@ function createPlayer(name, playerNumber) {
     })   
 
     gridItem3.addEventListener('click', function(){
+        if (gridItem3Clicked === true){
+            return
+        }
+        gridItem3Clicked = true
+
         if (playerTurn === 'playerOne') {
             game(2)
             gridItem3.textContent = 'X'
@@ -320,6 +331,11 @@ function createPlayer(name, playerNumber) {
     })  
 
     gridItem4.addEventListener('click', function(){
+        if (gridItem4Clicked === true){
+            return
+        }
+        gridItem4Clicked = true
+
         if (playerTurn === 'playerOne') {
             game(0)
             gridItem4.textContent = 'X'
@@ -334,6 +350,11 @@ function createPlayer(name, playerNumber) {
     })   
 
     gridItem5.addEventListener('click', function(){
+        if (gridItem5Clicked === true){
+            return
+        }
+        gridItem5Clicked = true
+
         if (playerTurn === 'playerOne') {
             game(1)
             gridItem5.textContent = 'X'
@@ -348,6 +369,11 @@ function createPlayer(name, playerNumber) {
     })   
 
     gridItem6.addEventListener('click', function(){
+        if (gridItem6Clicked === true){
+            return
+        }
+        gridItem6Clicked = true
+
         if (playerTurn === 'playerOne') {
             game(2)
             gridItem6.textContent = 'X'
@@ -361,6 +387,11 @@ function createPlayer(name, playerNumber) {
         }
     })  
     gridItem7.addEventListener('click', function(){
+        if (gridItem7Clicked === true){
+            return
+        }
+        gridItem7Clicked = true
+
         if (playerTurn === 'playerOne') {
             game(0)
             gridItem7.textContent = 'X'
@@ -375,6 +406,11 @@ function createPlayer(name, playerNumber) {
     })   
 
     gridItem8.addEventListener('click', function(){
+        if (gridItem8Clicked === true){
+            return
+        }
+        gridItem8Clicked = true
+
         if (playerTurn === 'playerOne') {
             game(1)
             gridItem8.textContent = 'X'
@@ -389,6 +425,11 @@ function createPlayer(name, playerNumber) {
     })   
 
     gridItem9.addEventListener('click', function(){
+        if (gridItem9Clicked === true){
+            return
+        }
+        gridItem9Clicked = true
+
         if (playerTurn === 'playerOne') {
             game(2)
             gridItem9.textContent = 'X'
