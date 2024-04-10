@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log(board)
 
 } ())
-let gridItem1 = document.querySelector('#griditem1')
+    let gridItem1 = document.querySelector('#griditem1')
     let gridItem2 = document.querySelector('#griditem2')
     let gridItem3 = document.querySelector('#griditem3')
     let gridItem4 = document.querySelector('#griditem4')
@@ -50,12 +50,12 @@ let gridItem1 = document.querySelector('#griditem1')
     let usernamebutton2Clicked = false
 
     usernamebutton1.addEventListener('click', function() {
-        usernamebutton1Clicked = true
+        usernamebutton1
         createPlayer(username1.value, '1')
     })
 
     usernamebutton2.addEventListener('click', function() {
-        usernamebutton2Clicked = true
+        usernamebutton2
         createPlayer(username2.value, '2')
     })
 
@@ -110,7 +110,86 @@ let gridItem1 = document.querySelector('#griditem1')
     let gameStatus = document.querySelector('.gamestatus')
 
     let playerTurn;
-    playerTurn = 'playerOne'
+    playerTurn = 'playerTwo'
+
+    gridItem1.addEventListener('click', function(){
+        
+        if (playerTurn === 'playerOne') {
+            playerTurn = 'playerTwo'
+        } else if (playerTurn === 'playerTwo') {
+            playerTurn = 'playerOne'
+        }
+    })   
+
+    gridItem2.addEventListener('click', function(){
+        if (playerTurn === 'playerOne') {
+            playerTurn = 'playerTwo'
+        } else if (playerTurn === 'playerTwo') {
+            playerTurn = 'playerOne'
+        }
+    })   
+
+    gridItem3.addEventListener('click', function(){
+        
+        if (playerTurn === 'playerOne') {
+            playerTurn = 'playerTwo'
+        } else if (playerTurn === 'playerTwo') {
+            playerTurn = 'playerOne'
+        }
+    })  
+
+    gridItem4.addEventListener('click', function(){
+        
+        if (playerTurn === 'playerOne') {
+            playerTurn = 'playerTwo'
+        } else if (playerTurn === 'playerTwo') {
+            playerTurn = 'playerOne'
+        }
+    })   
+
+    gridItem5.addEventListener('click', function(){
+        
+        if (playerTurn === 'playerOne') {
+            playerTurn = 'playerTwo'
+        } else if (playerTurn === 'playerTwo') {
+            playerTurn = 'playerOne'
+        }
+    })   
+
+    gridItem6.addEventListener('click', function(){
+        
+        if (playerTurn === 'playerOne') {
+            playerTurn = 'playerTwo'
+        } else if (playerTurn === 'playerTwo') {
+            playerTurn = 'playerOne'
+        }
+    })  
+    gridItem7.addEventListener('click', function(){
+        
+        if (playerTurn === 'playerOne') {
+            playerTurn = 'playerTwo'
+        } else if (playerTurn === 'playerTwo') {
+            playerTurn = 'playerOne'
+        }
+    })   
+
+    gridItem8.addEventListener('click', function(){
+        
+        if (playerTurn === 'playerOne') {
+            playerTurn = 'playerTwo'
+        } else if (playerTurn === 'playerTwo') {
+            playerTurn = 'playerOne'
+        }
+    })   
+
+    gridItem9.addEventListener('click', function(){
+        
+        if (playerTurn === 'playerOne') {
+            playerTurn = 'playerTwo'
+        } else if (playerTurn === 'playerTwo') {
+            playerTurn = 'playerOne'
+        }
+    })  
 
 function createPlayer(name, playerNumber) {
     let player = {
@@ -181,46 +260,47 @@ function createPlayer(name, playerNumber) {
             }
     }
 
-    function playerTurnSwitch() {
-            playerTurn = 'playerTwo'
-    }
-
-    function playerTurnSwitch2() {
-            playerTurn = 'playerOne'
-    }
+    let gridItem1Clicked = false
+    let gridItem2Clicked = false
+    let gridItem3Clicked = false
+    let gridItem4Clicked = false
+    let gridItem5Clicked = false
+    let gridItem6Clicked = false
+    let gridItem7Clicked = false
+    let gridItem8Clicked = false
+    let gridItem9Clicked = false
 
     gridItem1.addEventListener('click', function(){
-        if (playerTurn === 'playerOne') {
-            game(0)
-            gridItem1.textContent = 'X'
-            player.playerNumber = '2'
-            playerTurnSwitch2()
-            playerTurnSwitch()
-            gameStatus.textContent = playerTurn
-        } else if (playerTurn === 'playerTwo') {
-            game(0)
-            gridItem1.textContent = '0'
-            player.playerNumber = '1'
-            playerTurnSwitch()
-            playerTurnSwitch2()
-            gameStatus.textContent = playerTurn
+         if (gridItem1Clicked === false) {
+            if (playerTurn === 'playerOne') {
+                game(0)
+                gridItem1.textContent = 'X'
+                player.playerNumber = '2'
+                gameStatus.textContent = playerTurn
+            } else if (playerTurn === 'playerTwo') {
+                game(0)
+                gridItem1.textContent = '0'
+                player.playerNumber = '1'
+                gameStatus.textContent = playerTurn
+            }
+        } else {
+            
         }
+        
     })   
+    
+    
 
     gridItem2.addEventListener('click', function(){
         if (playerTurn === 'playerOne') {
             game(1)
             gridItem2.textContent = 'X'
             player.playerNumber = '2'
-            playerTurnSwitch2()
-            playerTurnSwitch()
             gameStatus.textContent = playerTurn
         } else if (playerTurn === 'playerTwo') {
             game(1)
             gridItem2.textContent = '0'
             player.playerNumber = '1'
-            playerTurnSwitch()
-            playerTurnSwitch2()
             gameStatus.textContent = playerTurn
         }
     })   
@@ -230,15 +310,11 @@ function createPlayer(name, playerNumber) {
             game(2)
             gridItem3.textContent = 'X'
             player.playerNumber = '2'
-            playerTurnSwitch2()
-            playerTurnSwitch()
             gameStatus.textContent = playerTurn
         } else if (playerTurn === 'playerTwo') {
             game(2)
             gridItem3.textContent = '0'
             player.playerNumber = '1'
-            playerTurnSwitch()
-            playerTurnSwitch2()
             gameStatus.textContent = playerTurn
         }
     })  
@@ -248,15 +324,11 @@ function createPlayer(name, playerNumber) {
             game(0)
             gridItem4.textContent = 'X'
             player.playerNumber = '2'
-            playerTurnSwitch2()
-            playerTurnSwitch()
             gameStatus.textContent = playerTurn
         } else if (playerTurn === 'playerTwo') {
             game(0)
             gridItem4.textContent = '0'
             player.playerNumber = '1'
-            playerTurnSwitch()
-            playerTurnSwitch2()
             gameStatus.textContent = playerTurn
         }
     })   
@@ -266,15 +338,11 @@ function createPlayer(name, playerNumber) {
             game(1)
             gridItem5.textContent = 'X'
             player.playerNumber = '2'
-            playerTurnSwitch2()
-            playerTurnSwitch()
             gameStatus.textContent = playerTurn
         } else if (playerTurn === 'playerTwo') {
             game(1)
             gridItem5.textContent = '0'
             player.playerNumber = '1'
-            playerTurnSwitch()
-            playerTurnSwitch2()
             gameStatus.textContent = playerTurn
         }
     })   
@@ -284,15 +352,11 @@ function createPlayer(name, playerNumber) {
             game(2)
             gridItem6.textContent = 'X'
             player.playerNumber = '2'
-            playerTurnSwitch2()
-            playerTurnSwitch()
             gameStatus.textContent = playerTurn
         } else if (playerTurn === 'playerTwo') {
             game(2)
             gridItem6.textContent = '0'
             player.playerNumber = '1'
-            playerTurnSwitch()
-            playerTurnSwitch2()
             gameStatus.textContent = playerTurn
         }
     })  
@@ -301,15 +365,11 @@ function createPlayer(name, playerNumber) {
             game(0)
             gridItem7.textContent = 'X'
             player.playerNumber = '2'
-            playerTurnSwitch2()
-            playerTurnSwitch()
             gameStatus.textContent = playerTurn
         } else if (playerTurn === 'playerTwo') {
             game(0)
             gridItem7.textContent = '0'
             player.playerNumber = '1'
-            playerTurnSwitch()
-            playerTurnSwitch2()
             gameStatus.textContent = playerTurn
         }
     })   
@@ -319,15 +379,11 @@ function createPlayer(name, playerNumber) {
             game(1)
             gridItem8.textContent = 'X'
             player.playerNumber = '2'
-            playerTurnSwitch2()
-            playerTurnSwitch()
             gameStatus.textContent = playerTurn
         } else if (playerTurn === 'playerTwo') {
             game(1)
             gridItem8.textContent = '0'
             player.playerNumber = '1'
-            playerTurnSwitch()
-            playerTurnSwitch2()
             gameStatus.textContent = playerTurn
         }
     })   
@@ -337,15 +393,11 @@ function createPlayer(name, playerNumber) {
             game(2)
             gridItem9.textContent = 'X'
             player.playerNumber = '2'
-            playerTurnSwitch2()
-            playerTurnSwitch()
             gameStatus.textContent = playerTurn
         } else if (playerTurn === 'playerTwo') {
             game(2)
             gridItem9.textContent = '0'
             player.playerNumber = '1'
-            playerTurnSwitch()
-            playerTurnSwitch2()
             gameStatus.textContent = playerTurn
         }
     })  
