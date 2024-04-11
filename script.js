@@ -28,6 +28,19 @@ document.addEventListener('DOMContentLoaded', function () {
     
     let gameForm = document.querySelector('.gameform')
     let resetGameButton = document.querySelector('.resetbutton')
+
+    let gridItem1Clicked = false
+    let gridItem2Clicked = false
+    let gridItem3Clicked = false
+    let gridItem4Clicked = false
+    let gridItem5Clicked = false
+    let gridItem6Clicked = false
+    let gridItem7Clicked = false
+    let gridItem8Clicked = false
+    let gridItem9Clicked = false
+
+    let playerTurn;
+    playerTurn = 'playerTwo'
     
     resetGameButton.addEventListener('click', function () {
         gridItem1.textContent = ' '
@@ -39,6 +52,16 @@ document.addEventListener('DOMContentLoaded', function () {
         gridItem7.textContent = ' '
         gridItem8.textContent = ' '
         gridItem9.textContent = ' '
+        gridItem1Clicked = false
+        gridItem2Clicked = false
+        gridItem3Clicked = false
+        gridItem4Clicked = false
+        gridItem5Clicked = false
+        gridItem6Clicked = false
+        gridItem7Clicked = false
+        gridItem8Clicked = false
+        gridItem9Clicked = false
+        playerTurn = 'playerTwo'
     })
 
     let username1 = document.querySelector('#username1')
@@ -50,12 +73,12 @@ document.addEventListener('DOMContentLoaded', function () {
     let usernamebutton2Clicked = false
 
     usernamebutton1.addEventListener('click', function() {
-        usernamebutton1
+        usernamebutton1Clicked = true
         createPlayer(username1.value, '1')
     })
 
     usernamebutton2.addEventListener('click', function() {
-        usernamebutton2
+        usernamebutton2Clicked = true
         createPlayer(username2.value, '2')
     })
 
@@ -66,51 +89,73 @@ document.addEventListener('DOMContentLoaded', function () {
     let player2StatWins = document.querySelector('.player2wins')
 
     let startGameButton = document.querySelector('#startgame')
+    let startButtonClicked = false
+
 
     startGameButton.addEventListener('click', function() {
-        usernamebutton1.disabled = true
-        usernamebutton2.disabled = true
-        username1.disabled = true
-        username2.disabled = true
+        startButtonClicked = true
+        startGameButton.disabled = true
     })
 
     if (username1.value === '') {
-        startGameButton.disabled = true
-        startGameButton.textContent = 'Please Enter a Name'
+        usernamebutton1.disabled = true
+        usernamebutton1.textContent = 'Enter Player Name'
     }
-    
     username1.addEventListener('input', function(){
         if (username1.value != '') {
-            startGameButton.disabled = false
-            startGameButton.textContent = 'Start Game'
+            usernamebutton1.disabled = false
+            usernamebutton1.textContent = 'Save Player Name'
         } else if (username1.value === '') {
-            startGameButton.disabled = true
-            startGameButton.textContent = 'Please Enter a Name'
+            usernamebutton1.disabled = true
+            usernamebutton1.textContent = 'Enter Player Names'
         }
     })
 
-    if (username2.value === '') {
-        startGameButton.disabled = true
-        startGameButton.textContent = 'Please Enter a Name'
-    }
-    
-    username2.addEventListener('input', function(){
-        if (username2.value != '') {
+    usernamebutton1.addEventListener('click', function(){
+        usernamebutton1.textContent = 'Player Name Saved'
+        usernamebutton1.disabled = true
+        username1.disabled = true
+        usernamebutton1Clicked = true
+        if (usernamebutton2Clicked === true) {
             startGameButton.disabled = false
-            startGameButton.textContent = 'Start Game'
-        } else if (username2.value === '') {
-            startGameButton.disabled = true
-            startGameButton.textContent = 'Please Enter a Name'
         }
     })
+
+    usernamebutton2.addEventListener('click', function(){
+        usernamebutton2.textContent = 'Player Name Saved'
+        usernamebutton2.disabled = true
+        username2.disabled = true
+        usernamebutton2Clicked = true
+        if (usernamebutton1Clicked === true) {
+            startGameButton.disabled = false
+        }
+        if (usernamebutton1Clicked !== true) {
+            startGameButton.disabled = true
+        } 
+    })
+
+    if (username2.value === '') {
+        usernamebutton2.disabled = true
+        usernamebutton2.textContent = 'Enter Player Names'
+    }
+    username2.addEventListener('input', function(){
+        if (username2.value != '') {
+            usernamebutton2.disabled = false
+            usernamebutton2.textContent = 'Save Player Name'
+        } else if (username2.value === '') {
+            usernamebutton2.disabled = true
+            usernamebutton2.textContent = 'Enter Player Names'
+        }
+    })
+
+    if (usernamebutton1Clicked !== true && usernamebutton2Clicked !== true) {
+        startGameButton.disabled = true
+    } 
 
     let playerOneCreated = false
     let playerTwoCreated = false
 
     let gameStatus = document.querySelector('.gamestatus')
-
-    let playerTurn;
-    playerTurn = 'playerTwo'
 
     gridItem1.addEventListener('click', function(){
         
@@ -241,7 +286,7 @@ function createPlayer(name, playerNumber) {
         }
     }
     
-    gameStatus.textContent = playerTurn
+    gameStatus.textContent = playerTurn 
 
 
     function addPoints() {
@@ -259,15 +304,6 @@ function createPlayer(name, playerNumber) {
                 gameStatus.textContent = `${player.name} Wins!`
             }
     }
-    let gridItem1Clicked = false
-    let gridItem2Clicked = false
-    let gridItem3Clicked = false
-    let gridItem4Clicked = false
-    let gridItem5Clicked = false
-    let gridItem6Clicked = false
-    let gridItem7Clicked = false
-    let gridItem8Clicked = false
-    let gridItem9Clicked = false
 
     gridItem1.addEventListener('click', function(){
         if (gridItem1Clicked === true){
