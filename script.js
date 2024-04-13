@@ -145,6 +145,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (playerTurn === 'playerTwo') {
             playerTurn = 'playerOne'
         } 
+    
     })   
 
     gridItem2.addEventListener('click', function(){
@@ -216,7 +217,6 @@ document.addEventListener('DOMContentLoaded', function () {
             playerTurn = 'playerOne'
         }
     })  
-
 function createPlayer(name, playerNumber) {
     let player = {
         name: name,
@@ -251,6 +251,12 @@ function createPlayer(name, playerNumber) {
         gameboardSpace = 9
         playerTurnDisplay.textContent = ''
         gameStatus.textContent = ''
+        player.wins = 0
+        player.player2wins = 0
+        player1Stats.style.backgroundColor = 'white'
+        player1Stats.style.padding = '0px'
+        player2Stats.style.backgroundColor = 'white'
+        player2Stats.style.padding = '0px'
     })
 
     let playerArray = []
@@ -351,7 +357,7 @@ function createPlayer(name, playerNumber) {
         }
         gridItem1Clicked = true
 
-         if (gridItem1.textContent !== 'X' || gridItem1.textContent !== '0') {
+        
             if (playerTurn === 'playerOne') {
                 game(0)
                 gridItem1.textContent = 'X'
@@ -363,7 +369,23 @@ function createPlayer(name, playerNumber) {
                 player.playerNumber = '1'
                 playerTurnDisplay.textContent = username1.value + '`s Turn'
             }
-        } 
+
+        if (playerTurn === 'playerOne') {
+            player1Stats.style.backgroundColor = 'white';
+            player2Stats.style.backgroundColor = '#37A6AF';
+            player1Stats.style.padding = '0px';
+            player2Stats.style.padding = '15px';
+            player1Stats.style.transition = 'background-color 0.5s ease, padding 0.5s ease';
+            player2Stats.style.transition = 'background-color 0.5s ease, padding 0.5s ease';
+        } else if (playerTurn === 'playerTwo') {
+            player1Stats.style.backgroundColor = '#37A6AF';
+            player2Stats.style.backgroundColor = 'white';
+            player1Stats.style.padding = '15px';
+            player2Stats.style.padding = '0px';
+            player1Stats.style.transition = 'background-color 0.5s ease, padding 0.5s ease';
+            player2Stats.style.transition = 'background-color 0.5s ease, padding 0.5s ease';
+        }
+            
     })
     
     
@@ -384,6 +406,22 @@ function createPlayer(name, playerNumber) {
             player.playerNumber = '1'
             playerTurnDisplay.textContent = username1.value + '`s Turn'
         }
+
+        if (playerTurn === 'playerOne') {
+            player1Stats.style.backgroundColor = 'white';
+            player2Stats.style.backgroundColor = '#37A6AF';
+            player1Stats.style.padding = '0px';
+            player2Stats.style.padding = '15px';
+            player1Stats.style.transition = 'background-color 0.5s ease, padding 0.5s ease';
+            player2Stats.style.transition = 'background-color 0.5s ease, padding 0.5s ease';
+        } else if (playerTurn === 'playerTwo') {
+            player1Stats.style.backgroundColor = '#37A6AF';
+            player2Stats.style.backgroundColor = 'white';
+            player1Stats.style.padding = '15px';
+            player2Stats.style.padding = '0px';
+            player1Stats.style.transition = 'background-color 0.5s ease, padding 0.5s ease';
+            player2Stats.style.transition = 'background-color 0.5s ease, padding 0.5s ease';
+        }
     })   
 
     gridItem3.addEventListener('click', function(){
@@ -402,6 +440,22 @@ function createPlayer(name, playerNumber) {
             gridItem3.textContent = '0'
             player.playerNumber = '1'
             playerTurnDisplay.textContent = username1.value + '`s Turn'
+        }
+
+        if (playerTurn === 'playerOne') {
+            player1Stats.style.backgroundColor = 'white';
+            player2Stats.style.backgroundColor = '#37A6AF';
+            player1Stats.style.padding = '0px';
+            player2Stats.style.padding = '15px';
+            player1Stats.style.transition = 'background-color 0.5s ease, padding 0.5s ease';
+            player2Stats.style.transition = 'background-color 0.5s ease, padding 0.5s ease';
+        } else if (playerTurn === 'playerTwo') {
+            player1Stats.style.backgroundColor = '#37A6AF';
+            player2Stats.style.backgroundColor = 'white';
+            player1Stats.style.padding = '15px';
+            player2Stats.style.padding = '0px';
+            player1Stats.style.transition = 'background-color 0.5s ease, padding 0.5s ease';
+            player2Stats.style.transition = 'background-color 0.5s ease, padding 0.5s ease';
         }
     })  
 
@@ -422,6 +476,22 @@ function createPlayer(name, playerNumber) {
             player.playerNumber = '1'
             playerTurnDisplay.textContent = username1.value + '`s Turn'
         }
+
+        if (playerTurn === 'playerOne') {
+            player1Stats.style.backgroundColor = 'white';
+            player2Stats.style.backgroundColor = '#37A6AF';
+            player1Stats.style.padding = '0px';
+            player2Stats.style.padding = '15px';
+            player1Stats.style.transition = 'background-color 0.5s ease, padding 0.5s ease';
+            player2Stats.style.transition = 'background-color 0.5s ease, padding 0.5s ease';
+        } else if (playerTurn === 'playerTwo') {
+            player1Stats.style.backgroundColor = '#37A6AF';
+            player2Stats.style.backgroundColor = 'white';
+            player1Stats.style.padding = '15px';
+            player2Stats.style.padding = '0px';
+            player1Stats.style.transition = 'background-color 0.5s ease, padding 0.5s ease';
+            player2Stats.style.transition = 'background-color 0.5s ease, padding 0.5s ease';
+        }
     })   
 
     gridItem5.addEventListener('click', function(){
@@ -440,6 +510,22 @@ function createPlayer(name, playerNumber) {
             gridItem5.textContent = '0'
             player.playerNumber = '1'
             playerTurnDisplay.textContent = username1.value + '`s Turn'
+        }
+
+        if (playerTurn === 'playerOne') {
+            player1Stats.style.backgroundColor = 'white';
+            player2Stats.style.backgroundColor = '#37A6AF';
+            player1Stats.style.padding = '0px';
+            player2Stats.style.padding = '15px';
+            player1Stats.style.transition = 'background-color 0.5s ease, padding 0.5s ease';
+            player2Stats.style.transition = 'background-color 0.5s ease, padding 0.5s ease';
+        } else if (playerTurn === 'playerTwo') {
+            player1Stats.style.backgroundColor = '#37A6AF';
+            player2Stats.style.backgroundColor = 'white';
+            player1Stats.style.padding = '15px';
+            player2Stats.style.padding = '0px';
+            player1Stats.style.transition = 'background-color 0.5s ease, padding 0.5s ease';
+            player2Stats.style.transition = 'background-color 0.5s ease, padding 0.5s ease';
         }
     })   
 
@@ -460,6 +546,22 @@ function createPlayer(name, playerNumber) {
             player.playerNumber = '1'
             playerTurnDisplay.textContent = username1.value + '`s Turn'
         }
+
+        if (playerTurn === 'playerOne') {
+            player1Stats.style.backgroundColor = 'white';
+            player2Stats.style.backgroundColor = '#37A6AF';
+            player1Stats.style.padding = '0px';
+            player2Stats.style.padding = '15px';
+            player1Stats.style.transition = 'background-color 0.5s ease, padding 0.5s ease';
+            player2Stats.style.transition = 'background-color 0.5s ease, padding 0.5s ease';
+        } else if (playerTurn === 'playerTwo') {
+            player1Stats.style.backgroundColor = '#37A6AF';
+            player2Stats.style.backgroundColor = 'white';
+            player1Stats.style.padding = '15px';
+            player2Stats.style.padding = '0px';
+            player1Stats.style.transition = 'background-color 0.5s ease, padding 0.5s ease';
+            player2Stats.style.transition = 'background-color 0.5s ease, padding 0.5s ease';
+        }
     })  
     gridItem7.addEventListener('click', function(){
         if (gridItem7Clicked === true){
@@ -477,6 +579,22 @@ function createPlayer(name, playerNumber) {
             gridItem7.textContent = '0'
             player.playerNumber = '1'
             playerTurnDisplay.textContent = username1.value + '`s Turn'
+        }
+
+        if (playerTurn === 'playerOne') {
+            player1Stats.style.backgroundColor = 'white';
+            player2Stats.style.backgroundColor = '#37A6AF';
+            player1Stats.style.padding = '0px';
+            player2Stats.style.padding = '15px';
+            player1Stats.style.transition = 'background-color 0.5s ease, padding 0.5s ease';
+            player2Stats.style.transition = 'background-color 0.5s ease, padding 0.5s ease';
+        } else if (playerTurn === 'playerTwo') {
+            player1Stats.style.backgroundColor = '#37A6AF';
+            player2Stats.style.backgroundColor = 'white';
+            player1Stats.style.padding = '15px';
+            player2Stats.style.padding = '0px';
+            player1Stats.style.transition = 'background-color 0.5s ease, padding 0.5s ease';
+            player2Stats.style.transition = 'background-color 0.5s ease, padding 0.5s ease';
         }
     })   
 
@@ -497,6 +615,22 @@ function createPlayer(name, playerNumber) {
             player.playerNumber = '1'
             playerTurnDisplay.textContent = username1.value + '`s Turn'
         }
+
+        if (playerTurn === 'playerOne') {
+            player1Stats.style.backgroundColor = 'white';
+            player2Stats.style.backgroundColor = '#37A6AF';
+            player1Stats.style.padding = '0px';
+            player2Stats.style.padding = '15px';
+            player1Stats.style.transition = 'background-color 0.5s ease, padding 0.5s ease';
+            player2Stats.style.transition = 'background-color 0.5s ease, padding 0.5s ease';
+        } else if (playerTurn === 'playerTwo') {
+            player1Stats.style.backgroundColor = '#37A6AF';
+            player2Stats.style.backgroundColor = 'white';
+            player1Stats.style.padding = '15px';
+            player2Stats.style.padding = '0px';
+            player1Stats.style.transition = 'background-color 0.5s ease, padding 0.5s ease';
+            player2Stats.style.transition = 'background-color 0.5s ease, padding 0.5s ease';
+        }
     })   
 
     gridItem9.addEventListener('click', function(){
@@ -515,6 +649,22 @@ function createPlayer(name, playerNumber) {
             gridItem9.textContent = '0'
             player.playerNumber = '1'
             playerTurnDisplay.textContent = username1.value + '`s Turn'
+        }
+
+        if (playerTurn === 'playerOne') {
+            player1Stats.style.backgroundColor = 'white';
+            player2Stats.style.backgroundColor = '#37A6AF';
+            player1Stats.style.padding = '0px';
+            player2Stats.style.padding = '15px';
+            player1Stats.style.transition = 'background-color 0.5s ease, padding 0.5s ease';
+            player2Stats.style.transition = 'background-color 0.5s ease, padding 0.5s ease';
+        } else if (playerTurn === 'playerTwo') {
+            player1Stats.style.backgroundColor = '#37A6AF';
+            player2Stats.style.backgroundColor = 'white';
+            player1Stats.style.padding = '15px';
+            player2Stats.style.padding = '0px';
+            player1Stats.style.transition = 'background-color 0.5s ease, padding 0.5s ease';
+            player2Stats.style.transition = 'background-color 0.5s ease, padding 0.5s ease';
         }
     })  
 
