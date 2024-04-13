@@ -60,6 +60,9 @@ document.addEventListener('DOMContentLoaded', function () {
         createPlayer(username2.value, '2')
     })
 
+    let player1Stats = document.querySelector('.player1stats')
+    let player2Stats = document.querySelector('.player2stats')
+
     let player1StatName = document.querySelector('.player1name')
     let player1StatWins = document.querySelector('.player1wins')
 
@@ -68,7 +71,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let startGameButton = document.querySelector('#startgame')
     let startButtonClicked = false
-
 
     startGameButton.addEventListener('click', function() {
         startButtonClicked = true
@@ -142,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function () {
             playerTurn = 'playerTwo'
         } else if (playerTurn === 'playerTwo') {
             playerTurn = 'playerOne'
-        }
+        } 
     })   
 
     gridItem2.addEventListener('click', function(){
