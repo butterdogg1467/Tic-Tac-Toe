@@ -138,84 +138,140 @@ document.addEventListener('DOMContentLoaded', function () {
     let gameStatus = document.querySelector('.gamestatus')
     let playerTurnDisplay = document.querySelector('.playerturn')
 
+    let grid1TurnSwitched = false
+    let grid2TurnSwitched = false
+    let grid3TurnSwitched = false
+    let grid4TurnSwitched = false
+    let grid5TurnSwitched = false
+    let grid6TurnSwitched = false
+    let grid7TurnSwitched = false
+    let grid8TurnSwitched = false
+    let grid9TurnSwitched = false
+
     gridItem1.addEventListener('click', function(){
-        
+        if (grid1TurnSwitched === true) {
+            return
+        }
+
         if (playerTurn === 'playerOne') {
             playerTurn = 'playerTwo'
+            grid1TurnSwitched = true
         } else if (playerTurn === 'playerTwo') {
             playerTurn = 'playerOne'
+            grid1TurnSwitched = true
         } 
     
     })   
 
     gridItem2.addEventListener('click', function(){
+        if (grid2TurnSwitched === true) {
+            return
+        }
+
         if (playerTurn === 'playerOne') {
             playerTurn = 'playerTwo'
+            grid2TurnSwitched = true
         } else if (playerTurn === 'playerTwo') {
             playerTurn = 'playerOne'
-        }
+            grid2TurnSwitched = true
+        } 
     })   
 
     gridItem3.addEventListener('click', function(){
-        
+        if (grid3TurnSwitched === true) {
+            return
+        }
+
         if (playerTurn === 'playerOne') {
             playerTurn = 'playerTwo'
+            grid3TurnSwitched = true
         } else if (playerTurn === 'playerTwo') {
             playerTurn = 'playerOne'
-        }
+            grid3TurnSwitched = true
+        } 
     })  
 
     gridItem4.addEventListener('click', function(){
-        
+        if (grid4TurnSwitched === true) {
+            return
+        }
+
         if (playerTurn === 'playerOne') {
             playerTurn = 'playerTwo'
+            grid4TurnSwitched = true
         } else if (playerTurn === 'playerTwo') {
             playerTurn = 'playerOne'
-        }
+            grid4TurnSwitched = true
+        } 
     })   
 
     gridItem5.addEventListener('click', function(){
-        
+        if (grid5TurnSwitched === true) {
+            return
+        }
+
         if (playerTurn === 'playerOne') {
             playerTurn = 'playerTwo'
+            grid5TurnSwitched = true
         } else if (playerTurn === 'playerTwo') {
             playerTurn = 'playerOne'
-        }
+            grid5TurnSwitched = true
+        } 
     })   
 
     gridItem6.addEventListener('click', function(){
-        
+        if (grid6TurnSwitched === true) {
+            return
+        }
+
         if (playerTurn === 'playerOne') {
             playerTurn = 'playerTwo'
+            grid6TurnSwitched = true
         } else if (playerTurn === 'playerTwo') {
             playerTurn = 'playerOne'
-        }
+            grid6TurnSwitched = true
+        } 
     })  
     gridItem7.addEventListener('click', function(){
-        
+        if (grid7TurnSwitched === true) {
+            return
+        }
+
         if (playerTurn === 'playerOne') {
             playerTurn = 'playerTwo'
+            grid7TurnSwitched = true
         } else if (playerTurn === 'playerTwo') {
             playerTurn = 'playerOne'
-        }
+            grid7TurnSwitched = true
+        } 
     })   
 
     gridItem8.addEventListener('click', function(){
-        
+        if (grid8TurnSwitched === true) {
+            return
+        }
+
         if (playerTurn === 'playerOne') {
             playerTurn = 'playerTwo'
+            grid8TurnSwitched = true
         } else if (playerTurn === 'playerTwo') {
             playerTurn = 'playerOne'
-        }
+            grid8TurnSwitched = true
+        } 
     })   
 
     gridItem9.addEventListener('click', function(){
-        
+        if (grid9TurnSwitched === true) {
+            return
+        }
+
         if (playerTurn === 'playerOne') {
             playerTurn = 'playerTwo'
+            grid9TurnSwitched = true
         } else if (playerTurn === 'playerTwo') {
             playerTurn = 'playerOne'
-        }
+            grid9TurnSwitched = true
+        } 
     })  
 function createPlayer(name, playerNumber) {
     let player = {
@@ -257,6 +313,15 @@ function createPlayer(name, playerNumber) {
         player1Stats.style.padding = '0px'
         player2Stats.style.backgroundColor = 'white'
         player2Stats.style.padding = '0px'
+        grid1TurnSwitched = false
+        grid2TurnSwitched = false
+        grid3TurnSwitched = false
+        grid4TurnSwitched = false
+        grid5TurnSwitched = false
+        grid6TurnSwitched = false
+        grid7TurnSwitched = false
+        grid8TurnSwitched = false
+        grid9TurnSwitched = false
     })
 
     let playerArray = []
@@ -351,7 +416,8 @@ function createPlayer(name, playerNumber) {
     gridItem1.addEventListener('click', function(){
         if (gridItem1Clicked === true){
             return
-        }
+        } 
+    
         gridItem1Clicked = true
 
         
@@ -389,7 +455,8 @@ function createPlayer(name, playerNumber) {
     gridItem2.addEventListener('click', function(){
         if (gridItem2Clicked === true){
             return
-        }
+        } 
+    
         gridItem2Clicked = true
 
         if (playerTurn === 'playerOne') {
@@ -424,7 +491,8 @@ function createPlayer(name, playerNumber) {
     gridItem3.addEventListener('click', function(){
         if (gridItem3Clicked === true){
             return
-        }
+        } 
+    
         gridItem3Clicked = true
 
         if (playerTurn === 'playerOne') {
@@ -459,7 +527,8 @@ function createPlayer(name, playerNumber) {
     gridItem4.addEventListener('click', function(){
         if (gridItem4Clicked === true){
             return
-        }
+        } 
+    
         gridItem4Clicked = true
 
         if (playerTurn === 'playerOne') {
@@ -494,7 +563,8 @@ function createPlayer(name, playerNumber) {
     gridItem5.addEventListener('click', function(){
         if (gridItem5Clicked === true){
             return
-        }
+        } 
+    
         gridItem5Clicked = true
 
         if (playerTurn === 'playerOne') {
@@ -529,7 +599,8 @@ function createPlayer(name, playerNumber) {
     gridItem6.addEventListener('click', function(){
         if (gridItem6Clicked === true){
             return
-        }
+        } 
+    
         gridItem6Clicked = true
 
         if (playerTurn === 'playerOne') {
