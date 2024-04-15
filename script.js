@@ -368,7 +368,14 @@ function createPlayer(name, playerNumber) {
                 }
             
         } else if (playerTurn === 'playerTwo') {
-            if (player2Selections.includes('a1') && player2Selections.includes('a2') && player2Selections.includes('a3') ||player2Selections.includes('b1') && player2Selections.includes('b2') && player2Selections.includes('b3')) {
+            if (player2Selections.includes('a1') && player2Selections.includes('a2') && player2Selections.includes('a3') 
+                || player2Selections.includes('b1') && player2Selections.includes('b2') && player2Selections.includes('b3')
+                || player2Selections.includes('c1') && player2Selections.includes('c2') && player2Selections.includes('c3')
+                || player2Selections.includes('a1') && player2Selections.includes('b2') && player2Selections.includes('c3')
+                || player2Selections.includes('c1') && player2Selections.includes('b2') && player2Selections.includes('a3')
+                || player2Selections.includes('a1') && player2Selections.includes('b1') && player2Selections.includes('c1')
+                || player2Selections.includes('a2') && player2Selections.includes('b2') && player2Selections.includes('c2')
+                || player2Selections.includes('a3') && player2Selections.includes('b3') && player2Selections.includes('c3')) {
                     addPoints()
                     player2Selections = []
                 }
