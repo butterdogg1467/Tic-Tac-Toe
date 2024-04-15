@@ -289,27 +289,24 @@ function createPlayer(name, playerNumber) {
     function playerInput(input){
 
         if (playerTurn === 'playerOne') {
-            if (playerSelections.length >= 3) {
-                let playerSelectionsJoined = []
-                for(let i = 0; i < playerSelections.length; i += 3) {
-                    playerSelectionsJoined.push(playerSelections.slice(i, i + 3).join(''))
-                }
-                if (playerSelectionsJoined.includes('012') || playerSelectionsJoined.includes('000') || playerSelectionsJoined.includes('111') || playerSelectionsJoined.includes('222') || playerSelectionsJoined.includes('210')) {
+                
+                if (playerSelections.includes('a1') && playerSelections.includes('a2') && playerSelections.includes('a3') 
+                || playerSelections.includes('b1') && playerSelections.includes('b2') && playerSelections.includes('b3')
+                || playerSelections.includes('c1') && playerSelections.includes('c2') && playerSelections.includes('c3')
+                || playerSelections.includes('a1') && playerSelections.includes('b2') && playerSelections.includes('c3')
+                || playerSelections.includes('c1') && playerSelections.includes('b2') && playerSelections.includes('a3')
+                || playerSelections.includes('a1') && playerSelections.includes('b1') && playerSelections.includes('c1')
+                || playerSelections.includes('a2') && playerSelections.includes('b2') && playerSelections.includes('c2')
+                || playerSelections.includes('a3') && playerSelections.includes('b3') && playerSelections.includes('c3')) {
                     addPoints()
                     playerSelections = []
                 }
-            }
+            
         } else if (playerTurn === 'playerTwo') {
-            if (player2Selections.length >= 3) {
-                let player2SelectionsJoined = []
-                for(let i = 0; i < playerSelections.length; i += 3) {
-                    player2SelectionsJoined.push(player2Selections.slice(i, i + 3).join(''))
-                }
-                if (player2SelectionsJoined.includes('012') || player2SelectionsJoined.includes('000') || player2SelectionsJoined.includes('111') || player2SelectionsJoined.includes('222') || player2SelectionsJoined.includes('210')) {
+            if (player2Selections.includes('a1') && player2Selections.includes('a2') && player2Selections.includes('a3') ||player2Selections.includes('b1') && player2Selections.includes('b2') && player2Selections.includes('b3')) {
                     addPoints()
                     player2Selections = []
                 }
-            }
         }
 
         if (gameboardSpace <= 1 && player.wins === 0 && player.player2wins === 0) {
@@ -359,12 +356,12 @@ function createPlayer(name, playerNumber) {
 
         
             if (playerTurn === 'playerOne') {
-                game(0)
+                game('a1')
                 gridItem1.textContent = 'X'
                 player.playerNumber = '2'
                 playerTurnDisplay.textContent = username2.value + '`s Turn'
             } else if (playerTurn === 'playerTwo') {
-                game(0)
+                game('a1')
                 gridItem1.textContent = '0'
                 player.playerNumber = '1'
                 playerTurnDisplay.textContent = username1.value + '`s Turn'
@@ -396,12 +393,12 @@ function createPlayer(name, playerNumber) {
         gridItem2Clicked = true
 
         if (playerTurn === 'playerOne') {
-            game(1)
+            game('a2')
             gridItem2.textContent = 'X'
             player.playerNumber = '2'
             playerTurnDisplay.textContent = username2.value + '`s Turn'
         } else if (playerTurn === 'playerTwo') {
-            game(1)
+            game('a2')
             gridItem2.textContent = '0'
             player.playerNumber = '1'
             playerTurnDisplay.textContent = username1.value + '`s Turn'
@@ -431,12 +428,12 @@ function createPlayer(name, playerNumber) {
         gridItem3Clicked = true
 
         if (playerTurn === 'playerOne') {
-            game(2)
+            game('a3')
             gridItem3.textContent = 'X'
             player.playerNumber = '2'
             playerTurnDisplay.textContent = username2.value + '`s Turn'
         } else if (playerTurn === 'playerTwo') {
-            game(2)
+            game('a3')
             gridItem3.textContent = '0'
             player.playerNumber = '1'
             playerTurnDisplay.textContent = username1.value + '`s Turn'
@@ -466,12 +463,12 @@ function createPlayer(name, playerNumber) {
         gridItem4Clicked = true
 
         if (playerTurn === 'playerOne') {
-            game(0)
+            game('b1')
             gridItem4.textContent = 'X'
             player.playerNumber = '2'
             playerTurnDisplay.textContent = username2.value + '`s Turn'
         } else if (playerTurn === 'playerTwo') {
-            game(0)
+            game('b1')
             gridItem4.textContent = '0'
             player.playerNumber = '1'
             playerTurnDisplay.textContent = username1.value + '`s Turn'
@@ -501,12 +498,12 @@ function createPlayer(name, playerNumber) {
         gridItem5Clicked = true
 
         if (playerTurn === 'playerOne') {
-            game(1)
+            game('b2')
             gridItem5.textContent = 'X'
             player.playerNumber = '2'
             playerTurnDisplay.textContent = username2.value + '`s Turn'
         } else if (playerTurn === 'playerTwo') {
-            game(1)
+            game('b2')
             gridItem5.textContent = '0'
             player.playerNumber = '1'
             playerTurnDisplay.textContent = username1.value + '`s Turn'
@@ -536,12 +533,12 @@ function createPlayer(name, playerNumber) {
         gridItem6Clicked = true
 
         if (playerTurn === 'playerOne') {
-            game(2)
+            game('b3')
             gridItem6.textContent = 'X'
             player.playerNumber = '2'
             playerTurnDisplay.textContent = username2.value + '`s Turn'
         } else if (playerTurn === 'playerTwo') {
-            game(2)
+            game('b3')
             gridItem6.textContent = '0'
             player.playerNumber = '1'
             playerTurnDisplay.textContent = username1.value + '`s Turn'
@@ -570,12 +567,12 @@ function createPlayer(name, playerNumber) {
         gridItem7Clicked = true
 
         if (playerTurn === 'playerOne') {
-            game(0)
+            game('c1')
             gridItem7.textContent = 'X'
             player.playerNumber = '2'
             playerTurnDisplay.textContent = username2.value + '`s Turn'
         } else if (playerTurn === 'playerTwo') {
-            game(0)
+            game('c1')
             gridItem7.textContent = '0'
             player.playerNumber = '1'
             playerTurnDisplay.textContent = username1.value + '`s Turn'
@@ -605,12 +602,12 @@ function createPlayer(name, playerNumber) {
         gridItem8Clicked = true
 
         if (playerTurn === 'playerOne') {
-            game(1)
+            game('c2')
             gridItem8.textContent = 'X'
             player.playerNumber = '2'
             playerTurnDisplay.textContent = username2.value + '`s Turn'
         } else if (playerTurn === 'playerTwo') {
-            game(1)
+            game('c2')
             gridItem8.textContent = '0'
             player.playerNumber = '1'
             playerTurnDisplay.textContent = username1.value + '`s Turn'
@@ -640,12 +637,12 @@ function createPlayer(name, playerNumber) {
         gridItem9Clicked = true
 
         if (playerTurn === 'playerOne') {
-            game(2)
+            game('c3')
             gridItem9.textContent = 'X'
             player.playerNumber = '2'
             playerTurnDisplay.textContent = username2.value + '`s Turn'
         } else if (playerTurn === 'playerTwo') {
-            game(2)
+            game('c3')
             gridItem9.textContent = '0'
             player.playerNumber = '1'
             playerTurnDisplay.textContent = username1.value + '`s Turn'
