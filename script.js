@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let gridItem7 = document.querySelector('#griditem7')
     let gridItem8 = document.querySelector('#griditem8')
     let gridItem9 = document.querySelector('#griditem9')
-    
+
     let gameForm = document.querySelector('.gameform')
     let resetGameButton = document.querySelector('.resetbutton')
 
@@ -283,46 +283,8 @@ function createPlayer(name, playerNumber) {
         playerNumber: playerNumber,
     }
         resetGameButton.addEventListener('click', function () {
-        player.playerSelections.length = 0
-        player.player2Selections.length = 0
-        gridItem1.textContent = ' '
-        gridItem2.textContent = ' '
-        gridItem3.textContent = ' '
-        gridItem4.textContent = ' '
-        gridItem5.textContent = ' '
-        gridItem6.textContent = ' '
-        gridItem7.textContent = ' '
-        gridItem8.textContent = ' '
-        gridItem9.textContent = ' '
-        gridItem1Clicked = false
-        gridItem2Clicked = false
-        gridItem3Clicked = false
-        gridItem4Clicked = false
-        gridItem5Clicked = false
-        gridItem6Clicked = false
-        gridItem7Clicked = false
-        gridItem8Clicked = false
-        gridItem9Clicked = false
-        playerTurn = 'playerTwo'
-        gameboardSpace = 9
-        playerTurnDisplay.textContent = ''
-        gameStatus.textContent = ''
-        player.wins = 0
-        player.player2wins = 0
-        player1Stats.style.backgroundColor = 'white'
-        player1Stats.style.padding = '0px'
-        player2Stats.style.backgroundColor = 'white'
-        player2Stats.style.padding = '0px'
-        grid1TurnSwitched = false
-        grid2TurnSwitched = false
-        grid3TurnSwitched = false
-        grid4TurnSwitched = false
-        grid5TurnSwitched = false
-        grid6TurnSwitched = false
-        grid7TurnSwitched = false
-        grid8TurnSwitched = false
-        grid9TurnSwitched = false
-    })
+            location.reload()
+        })
 
     let playerArray = []
 
@@ -415,9 +377,7 @@ function createPlayer(name, playerNumber) {
             } else if (player.player2wins >= 1) {
                 gameStatus.textContent = username2.value + ' Wins!'
             } 
-            
-
-
+        
     }
 
     gridItem1.addEventListener('click', function(){
